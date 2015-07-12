@@ -14,7 +14,7 @@ published: true
 
   前段时间由于项目需要研究了一下'WebRTC'，功能确实强大：能很轻松的实现实时的视频和音频通话，并且还带有消除噪音、回声等语音通话中常见的问题，不过恶心的是虽然'WebRTC'开源也有好几年了，但是国内外的文档却非常的少并且还点时间久远了，我光是下载源码和编译都花了很长一段时间去查阅资料和实践，所以在此存档一下整个下载和编译的过程。
 
-准备：
+####准备：
 1.8G的内存
 2.安装最新的'git'和'subversion'
 3.'xcode'+'command line tools'
@@ -39,7 +39,8 @@ RussellY:~ linmin$ git clone https://chromium.googlesource.com/chromium/tools/de
 RussellY:~ linmin$ echo "export PATH=$PWD/depot_tools:$PATH" > $HOME/.bash_profile
 {% endhighlight %}
 
-开始下载,先新建一个存放'WebRTC'源代码的文件夹
+####开始下载
+先新建一个存放'WebRTC'源代码的文件夹
 {% highlight ruby %}
 RussellY:webrtc_source linmin$ mkdir webrtc
 RussellY:webrtc_source linmin$ cd webrtc/
@@ -54,6 +55,7 @@ RussellY:webrtc linmin$ gclient sync —force
 
 然后就开始下载了，中间一定要注意不要让vpn掉线了(还是shadowsocks好用...不用当心断线的问题)
 
+####开始编译
 下载成功后就进入编译环节，首先创建一个脚本文件并赋予权限并进入文件开始编辑
 {% highlight ruby %}
 RussellY:webrtc linmin$ touch build.sh
@@ -256,9 +258,8 @@ RussellY:webrtc linmin$ ./build.sh combine_libs
 RussellY:webrtc linmin$ ./build.sh create_framework
 {% endhighlight %}
 
-
+####添加依赖
 成功编译后就可以将.a文件和头文件或者是框架集成到自己项目中了，集成进去后别忘了在项目的'Build Phase'添加WebRTC的依赖库和框架
-
 
 *	libstdc++.6.dylib
 *	libsqlite3.dylib
