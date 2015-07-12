@@ -260,21 +260,21 @@ RussellY:webrtc linmin$ ./build.sh create_framework
 成功编译后就可以将.a文件和头文件或者是框架集成到自己项目中了，集成进去后别忘了在项目的'Build Phase'添加WebRTC的依赖库和框架
 
 
-•	libstdc++.6.dylib
-•	libsqlite3.dylib
-•	libc++.dylib
-•	libicucore.dylib
-•	Security.framework
-•	CFNetwork.framework
-•	GLKit.framework
-•	AudioToolbox.framework
-•	AVFoundation.framework
-•	CoreAudio.framework
-•	CoreMedia.framework
-•	CoreVideo.framework
-•	CoreGraphics.framework
-•	OpenGLES.framework
-•	QuartzCore.framework
+*	libstdc++.6.dylib
+*	libsqlite3.dylib
+*	libc++.dylib
+*	libicucore.dylib
+*	Security.framework
+*	CFNetwork.framework
+*	GLKit.framework
+*	AudioToolbox.framework
+*	AVFoundation.framework
+*	CoreAudio.framework
+*	CoreMedia.framework
+*	CoreVideo.framework
+*	CoreGraphics.framework
+*	OpenGLES.framework
+*	QuartzCore.framework
 
 
 下面是一些相关资料
