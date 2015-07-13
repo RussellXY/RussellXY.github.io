@@ -1,7 +1,7 @@
 ---
 layout: post
 title: WebRTC下载和编译存档
-date: 2015-05-11
+date: {}
 comments: true
 categories: iOS
 tags: 
@@ -11,7 +11,9 @@ description: WebRTC下载和编译存档
 published: true
 ---
 
+
 前段时间由于项目需要研究了一下`WebRTC`，功能确实强大：能很轻松的实现实时的视频和音频通话，并且还带有消除噪音、回声等功能，不过恶心的是虽然`WebRTC`开源也有好几年了，但是国内外的文档却非常的少并且还有点时间久远了，我光是下载源码和编译都花了很长一段时间去查阅资料和实践，中途也遇到过各种问题，所以在此存档一下整个下载和编译的过程。
+
 ####准备：
 * 8G的内存
 * 安装最新的[git](http://sourceforge.net/projects/git-osx-installer/)和[subversion](https://subversion.apache.org/download/)
@@ -277,5 +279,5 @@ RussellY:webrtc linmin$ ./build.sh create_framework
 
 
 下面是一些相关资料
-* [webrtc-build-scripts](https://github.com/pristineio/webrtc-build-scripts),这是github上别人写的一个shell脚本，涵盖了iOS和Android的WebRTC下载和编译，只需要一条命令就可以执行全部操作，但是个人感觉还是不太好用，因为中间很容易出现各种错误，所以最好还是自己一步一步下载和编译。
-* [Android iOS WebRTC 音视频开发总结](http://www.cnblogs.com/lingyunhu/p/3578218.html),国内一个牛人的WebRTC总结，可以去看看，不过信息比较碎片化。
+*	[webrtc-build-scripts](https://github.com/pristineio/webrtc-build-scripts),这是github上别人写的一个shell脚本，涵盖了iOS和Android的WebRTC下载和编译，只需要一条命令就可以执行全部操作，但是个人感觉还是不太好用，因为中间很容易出现各种错误，所以最好还是自己一步一步下载和编译。
+*	[Android iOS WebRTC 音视频开发总结](http://www.cnblogs.com/lingyunhu/p/3578218.html),国内一个牛人的WebRTC总结，可以去看看，不过信息比较碎片化。
