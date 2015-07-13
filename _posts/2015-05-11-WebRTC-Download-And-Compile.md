@@ -15,9 +15,9 @@ published: true
 前段时间由于项目需要研究了一下`WebRTC`，功能确实强大：能很“轻松”(中间的坑太多了...)的实现实时的视频和音频通话，并且还带有消除噪音、回声等功能，不过恶心的是虽然`WebRTC`开源也有好几年了，但是国内外的文档却非常的少并且还有点时间久远了，我光是下载源码和编译都花了很长一段时间去查阅资料和实践，中途也遇到过各种问题，所以在此存档一下整个下载和编译的过程。
 
 ####准备：
-* 8G的内存
+* 8G的硬盘内存
 * 安装最新的[git](http://sourceforge.net/projects/git-osx-installer/)和[subversion](https://subversion.apache.org/download/)
-* `xcode`+`command line tools`
+* `Xcode`+`Command Line Tools`
 * 在国内下载的话一定需要一个高速且稳定的VPN，或者使用ssh和shadowsocks来给终端代理
 
 以下操作都需要处于翻墙状态,不能翻墙的同学就去找个vpn或者代理吧
@@ -27,7 +27,7 @@ published: true
 RussellY:~ linmin$ mkdir -p webrtc_source/
 {% endhighlight %}
 
-下载`depot_tools`，一个用于编译`Chromium`和`WebRTC`的工具
+下载`depot_tools`,一个用于编译`Chromium`和`WebRTC`的工具
 
 {% highlight ruby %}
 RussellY:~ linmin$ cd webrtc_source/
@@ -56,11 +56,11 @@ RussellY:webrtc linmin$ gclient sync —force
 然后就开始下载了，中间一定要注意不要让vpn掉线了(还是shadowsocks好用...不用当心断线的问题)
 
 ####开始编译
-下载成功后就进入编译环节，首先创建一个脚本文件并赋予权限并进入文件开始编辑
+下载成功后就进入编译环节，首先创建一个脚本文件并赋予权限,然后使用vim命令开始编辑文件
 {% highlight ruby %}
 RussellY:webrtc linmin$ touch build.sh
 RussellY:webrtc linmin$ chmod +x build.sh
-RussellY:webrtc linmin$ vi build.sh
+RussellY:webrtc linmin$ vim build.sh
 {% endhighlight %}
 
 将下面这段代码拷贝进去
