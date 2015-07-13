@@ -12,35 +12,35 @@ published: true
 ---
 
 
-  前段时间由于项目需要研究了一下'WebRTC'，功能确实强大：能很轻松的实现实时的视频和音频通话，并且还带有消除噪音、回声等功能，不过恶心的是虽然'WebRTC'开源也有好几年了，但是国内外的文档却非常的少并且还有点时间久远了，我光是下载源码和编译都花了很长一段时间去查阅资料和实践，中途也遇到过各种问题，所以在此存档一下整个下载和编译的过程。
+  前段时间由于项目需要研究了一下`WebRTC`，功能确实强大：能很轻松的实现实时的视频和音频通话，并且还带有消除噪音、回声等功能，不过恶心的是虽然`WebRTC`开源也有好几年了，但是国内外的文档却非常的少并且还有点时间久远了，我光是下载源码和编译都花了很长一段时间去查阅资料和实践，中途也遇到过各种问题，所以在此存档一下整个下载和编译的过程。
 
 ####准备：
 * 8G的内存
 * 安装最新的[git](http://sourceforge.net/projects/git-osx-installer/)和[subversion](https://subversion.apache.org/download/)
-* 'xcode'+'command line tools'
+* `xcode`+`command line tools`
 * 在国内下载的话一定需要一个高速且稳定的VPN，或者使用ssh和shadowsocks来给终端代理
 
 以下操作都需要处于翻墙状态,不能翻墙的同学就去找个vpn或者代理吧
 
-打开终端，先创建好一个用于保存'WebRTC'的文件夹
+打开终端，先创建好一个用于保存`WebRTC`的文件夹
 {% highlight ruby %}
 RussellY:~ linmin$ mkdir -p webrtc_source/
 {% endhighlight %}
 
-下载'depot_tools'，一个用于编译'Chromium'和'WebRTC'的工具
+下载`depot_tools`，一个用于编译`Chromium`和`WebRTC`的工具
 
 {% highlight ruby %}
 RussellY:~ linmin$ cd webrtc_source/
 RussellY:~ linmin$ git clone https://chromium.googlesource.com/chromium/tools/depot_tools.git
 {% endhighlight %}
 
-把'depot_tools'的路径加入系统环境变量
+把`depot_tools`的路径加入系统环境变量
 {% highlight ruby %}
 RussellY:~ linmin$ echo "export PATH=$PWD/depot_tools:$PATH" > $HOME/.bash_profile
 {% endhighlight %}
 
 ####开始下载
-先新建一个存放'WebRTC'源代码的文件夹
+先新建一个存放`WebRTC`源代码的文件夹
 {% highlight ruby %}
 RussellY:webrtc_source linmin$ mkdir webrtc
 RussellY:webrtc_source linmin$ cd webrtc/
@@ -244,22 +244,22 @@ RussellY:webrtc linmin$ ls
 WebRTC.framework build_webrtc.sh  libWebRTC.a      src
 {% endhighlight %}
 
-到此WebRTC编译就已经完成，如果发现没有生成框架文件的话应该是编译过程中报错了，原因有很多种，比如我就遇到过因为我电脑里有一个无效的开发者证书导致的错误，所以这个时候最好是将'build.sh'脚本里面的'function'一个一个的执行然后分析错误信息，比如先执行这条命令只编译模拟器版
+到此WebRTC编译就已经完成，如果发现没有生成框架文件的话应该是编译过程中报错了，原因有很多种，比如我就遇到过因为我电脑里有一个无效的开发者证书导致的错误，所以这个时候最好是将`build.sh`脚本里面的`function`一个一个的执行然后分析错误信息，比如先执行这条命令只编译模拟器版
 {% highlight ruby %}
 RussellY:webrtc linmin$ ./build.sh build_iossim_ia32
 {% endhighlight %}
-查看执行过程中是否发现错误信息，如果没有则继续编译'x86_64'版
+查看执行过程中是否发现错误信息，如果没有则继续编译`x86_64`版
 {% highlight ruby %}
 RussellY:webrtc linmin$ ./build.sh build_iossim_x86_64
 {% endhighlight %}
-以此为例一直把'arm64'都成功编译完，如果中间抱错了则根据错误信息进行修改然后再删除文件夹并重新编译，最后执行合并静态库和创建框架命令
+以此为例一直把`arm64`都成功编译完，如果中间抱错了则根据错误信息进行修改然后再删除文件夹并重新编译，最后执行合并静态库和创建框架命令
 {% highlight ruby %}
 RussellY:webrtc linmin$ ./build.sh combine_libs
 RussellY:webrtc linmin$ ./build.sh create_framework
 {% endhighlight %}
 
 ####添加依赖
-成功编译后就可以将.a文件和头文件或者是框架集成到自己项目中了，集成进去后别忘了在项目的'Build Phase'添加WebRTC的依赖库和框架
+成功编译后就可以将.a文件和头文件或者是框架集成到自己项目中了，集成进去后别忘了在项目的`Build Phase`添加WebRTC的依赖库和框架
 
 *	libstdc++.6.dylib
 *	libsqlite3.dylib
