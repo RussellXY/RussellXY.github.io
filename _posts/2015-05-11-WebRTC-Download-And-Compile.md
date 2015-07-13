@@ -20,7 +20,7 @@ published: true
 * 'xcode'+'command line tools'
 * 在国内下载的话一定需要一个高速且稳定的VPN，或者使用ssh和shadowsocks来给终端代理
 
-以下操作都需要处于翻墙状态
+以下操作都需要处于翻墙状态,不能翻墙的同学就去找个vpn或者代理吧
 
 打开终端，先创建好一个用于保存'WebRTC'的文件夹
 {% highlight ruby %}
