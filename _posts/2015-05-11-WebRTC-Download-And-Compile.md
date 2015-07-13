@@ -258,26 +258,3 @@ RussellY:webrtc linmin$ ./build.sh combine_libs
 RussellY:webrtc linmin$ ./build.sh create_framework
 {% endhighlight %}
 
-####添加依赖
-成功编译后就可以将.a文件和头文件或者是框架集成到自己项目中了，集成进去后别忘了在项目的`Build Phase`添加WebRTC的依赖库和框架
-
-*	libstdc++.6.dylib
-*	libsqlite3.dylib
-*	libc++.dylib
-*	libicucore.dylib
-*	Security.framework
-*	CFNetwork.framework
-*	GLKit.framework
-*	AudioToolbox.framework
-*	AVFoundation.framework
-*	CoreAudio.framework
-*	CoreMedia.framework
-*	CoreVideo.framework
-*	CoreGraphics.framework
-*	OpenGLES.framework
-*	QuartzCore.framework
-
-
-下面是一些相关资料
-* [webrtc-build-scripts](https://github.com/pristineio/webrtc-build-scripts),这是github上别人写的一个shell脚本，涵盖了iOS和Android的WebRTC下载和编译，只需要一条命令就可以执行全部操作，但是个人感觉还是不太好用，因为中间很容易出现各种错误，所以最好还是自己一步一步下载和编译。
-* [Android iOS WebRTC 音视频开发总结](http://www.cnblogs.com/lingyunhu/p/3578218.html),国内一个牛人的WebRTC总结，可以去看看，不过信息比较碎片化。
