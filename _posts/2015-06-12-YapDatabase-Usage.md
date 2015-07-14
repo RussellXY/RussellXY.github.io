@@ -8,7 +8,7 @@ tags:
 - YapDatabase
 keywords: iOS YapDatabase FMDB SQLite
 description: 使用YapDatabase替代FMDB
-published: true
+published: false
 ---
 
 最近在研究一个开源项目[ChatSecure-iOS](https://github.com/ChatSecure/ChatSecure-iOS)时发现了一个不错的用于本地数据持久化的第三方库:[YapDatabase](https://github.com/yapstudios/YapDatabase),一番调研后决定集成到自己正在做的项目中，实践后发现比起之前用FMDB时需要写大量的sql语句来建表、增删查改等等方便太多了，不光如此`YapDatabase`还提供了好几个非常好用的功能(后面会一一叙述).
