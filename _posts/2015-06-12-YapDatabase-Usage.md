@@ -15,7 +15,7 @@ published: true
 
 ####什么是YapDatabase
 `YapDatabase`由两个主要特点组成:
-*   一个面向`iOS`和`Mac`的组合/键/值形式的数据存储工具，它是通过`SQLite`实现的.
+*   一个面向`iOS`和`Mac`的collection/key/value形式的数据存储工具，它是通过`SQLite`实现的.
 *   一个能提供诸如二级索引、全文检索等高级功能的插件架构.
 
 它包括如下功能:
@@ -56,7 +56,7 @@ NSString *key = @"id of this object";
 你可以在一个transaction block中做很多事情，例如：在数据库中插入对象、枚举所有对象。
 
 ####存储对象
-通过`YapDatabase`你可以存储任何类型的对象，不过为了能够存储对象到磁盘中你必须能够实现这个对象的序列化,一个常用的方式是实现NSCoding协议，然后实现该协议中的两个序列化和反序列化的协议，详情可阅读apple[官方文档](https://developer.apple.com/library/mac/#documentation/Cocoa/Conceptual/Archiving/Articles/codingobjects.html#//apple_ref/doc/uid/20000948-BCIHBJDE)
+通过`YapDatabase`你可以存储任何类型的对象，不过为了能够存储对象到磁盘中你必须实现这个对象的序列化,一个常用的方式是遵守NSCoding协议，然后实现该协议中的两个序列化和反序列化的方法，详情可阅读apple[官方文档](https://developer.apple.com/library/mac/#documentation/Cocoa/Conceptual/Archiving/Articles/codingobjects.html#//apple_ref/doc/uid/20000948-BCIHBJDE)
 {% highlight ruby %}
 @interface MyObject : NSObject <NSCoding>
 @end
