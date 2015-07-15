@@ -32,34 +32,9 @@ published: true
 + **扩展**.不仅仅是key-value，还具备很多扩展的数据结构，你可以扩展自己的数据结构。
 + **Objective-C**.使用Objective-C的api意味着你可以即刻上手。
 
-##初次使用
-开始使用YapDatabase来实现一个简单的存储操作
-{% highlight ruby %}
-// 创建或者打开指定路径的数据库文件
-YapDatabase *database = [[YapDatabase alloc] initWithPath:dataPath];
-
-// 获得一个数据库的connection
-YapDatabaseConnection *connection = [database newConnection];
-
-YourObject *object1 = [YourObject new];
-NSString *key = @"id of this object";
-
-// 存储一个对象
-[connection readWriteWithBlock:^(YapDatabaseReadWriteTransaction *transaction){
-    [transaction setObject:object1 forKey:key inCollection:NSStringFromClass([YourObject class])];
-}];
-
-// 读取这个对象
-[connection readWithBlock:^(YapDatabaseReadTransaction *transaction){
-    NSLog(@"YourObject:%@",[transaction objectForKey:key inCollection:NSStringFromClass(YourObject class)]);
-}];
-{% endhighlight %}
-
-一个很好理解**YapDatabase**的方法是把它当作一个存储dictionaries的dictionary，区别仅仅是它会把所有的值都存储在磁盘中。
-你可以在一个transaction block中做很多事情，例如：在数据库中插入对象、枚举所有对象。
-
 ##存储对象
 通过**YapDatabase**你可以存储任何类型的对象，不过为了能够存储对象到磁盘中你必须实现这个对象的序列化,一个常用的方式是遵守NSCoding协议，然后实现该协议中的两个序列化和反序列化的方法，详情可阅读apple[官方文档](https://developer.apple.com/library/mac/#documentation/Cocoa/Conceptual/Archiving/Articles/codingobjects.html#//apple_ref/doc/uid/20000948-BCIHBJDE)
+
 {% highlight ruby %}
 @interface MyObject : NSObject <NSCoding>
 @end
@@ -99,3 +74,37 @@ NSString *key = @"id of this object";
     [encoder encodeFloat:myFloat forKey:@"myFloat"];
 }
 {% endhighlight %}
+
+##初次使用
+开始使用YapDatabase来实现一个简单的存储操作
+{% highlight ruby %}
+// 创建或者打开指定路径的数据库文件
+YapDatabase *database = [[YapDatabase alloc] initWithPath:dataPath];
+
+// 获得一个数据库的connection
+YapDatabaseConnection *connection = [database newConnection];
+
+YourObject *object1 = [YourObject new];
+NSString *key = @"id of this object";
+
+// 存储一个对象
+[connection readWriteWithBlock:^(YapDatabaseReadWriteTransaction *transaction){
+    [transaction setObject:object1 forKey:key inCollection:NSStringFromClass([YourObject class])];
+}];
+
+// 读取这个对象
+[connection readWithBlock:^(YapDatabaseReadTransaction *transaction){
+    NSLog(@"YourObject:%@",[transaction objectForKey:key inCollection:NSStringFromClass(YourObject class)]);
+}];
+
+// 删除这个对象
+[connection readWriteWithBlock:^(YapDatabaseReadWriteTransaction *transaction){
+    [transaction setObject:nil forKey:key inCollection:NSStringFromClass([YourObject class])];
+}];
+
+{% endhighlight %}
+
+一个很好理解**YapDatabase**的方法是把它当作一个存储dictionaries的dictionary，区别仅仅是它会把所有的值都存储在磁盘中。
+你可以在一个transaction block中做很多事情，例如：在数据库中插入对象、枚举所有对象。
+
+
