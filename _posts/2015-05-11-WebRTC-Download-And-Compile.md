@@ -279,5 +279,6 @@ RussellY:webrtc linmin$ ./build.sh create_framework
 
 
 下面是一些相关资料
+
 * [webrtc-build-scripts](https://github.com/pristineio/webrtc-build-scripts),这是github上别人写的一个shell脚本，涵盖了iOS和Android的WebRTC下载和编译，只需要一条命令就可以执行全部操作，但是个人感觉还是不太好用，因为中间很容易出现各种错误，所以最好还是自己一步一步下载和编译。
 * [Android iOS WebRTC 音视频开发总结](http://www.cnblogs.com/lingyunhu/p/3578218.html),国内一个牛人的WebRTC总结，可以去看看，不过信息比较碎片化。
