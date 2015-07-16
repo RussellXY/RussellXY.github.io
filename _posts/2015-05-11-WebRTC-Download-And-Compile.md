@@ -12,17 +12,17 @@ published: true
 ---
 
 
-前段时间由于项目需要研究了一下`WebRTC`，功能确实强大：能很“轻松”(中间的坑太多了...)的实现实时的视频和音频通话，并且还带有消除噪音、回声等功能，不过恶心的是虽然`WebRTC`开源也有好几年了，但是国内外的文档却非常的少并且还有点时间久远了，我光是下载源码和编译都花了很长一段时间去查阅资料和实践，中途也遇到过各种问题，所以在此存档一下整个下载和编译的过程。
+前段时间由于项目需要研究了一下**WebRTC**，功能确实强大：能很“轻松”(中间的坑太多了...)的实现实时的视频和音频通话，并且还带有消除噪音、回声等功能，不过恶心的是虽然**WebRTC**开源也有好几年了，但是国内外的文档却非常的少并且还有点时间久远了，我光是下载源码和编译都花了很长一段时间去查阅资料和实践，中途也遇到过各种问题，所以在此存档一下整个下载和编译的过程。
 
 ####准备：
 * 8G的硬盘内存
 * 安装最新的[git](http://sourceforge.net/projects/git-osx-installer/)和[subversion](https://subversion.apache.org/download/)
-* `Xcode`+`Command Line Tools`
+* **Xcode**+**Command Line Tools**
 * 在国内下载的话一定需要一个高速且稳定的VPN，或者使用ssh和shadowsocks来给终端代理
 
 以下操作都需要处于翻墙状态,不能翻墙的同学就去找个vpn或者代理吧
 
-打开终端，先创建好一个用于保存`WebRTC`的文件夹
+打开终端，先创建好一个用于保存**WebRTC**的文件夹
 {% highlight ruby %}
 RussellY:~ linmin$ mkdir -p webrtc_source/
 {% endhighlight %}
@@ -73,7 +73,7 @@ function build_iossim_ia32() {
     export GYP_CROSSCOMPILE=1;
     pushd src;
     gclient runhooks;
-    #若需要编译Debug版则将下面这条语句改成 ninja -C out_ios_ia32/Debug-iphoneos AppRTCDemo,同时在下面的libtool命令出修改路径为Debug-iphones
+    #若需要编译Debug版则将下面这条语句改成 ninja -C out_ios_ia32/Debug-iphoneos AppRTCDemo,同时在下面的libtool命令处修改路径为Debug-iphones
     ninja -C out_ios_ia32/Release-iphonesimulator iossim AppRTCDemo;
  
     echo "*** creating iOS ia32 libraries";
@@ -97,7 +97,7 @@ function build_iossim_x86_64() {
     export GYP_CROSSCOMPILE=1;
     pushd src;
     gclient runhooks;
-    #若需要编译Debug版则将下面这条语句改成 ninja -C out_ios_x86_64/Debug-iphoneos AppRTCDemo,同时在下面的libtool命令出修改路径为Debug-iphones
+    #若需要编译Debug版则将下面这条语句改成 ninja -C out_ios_x86_64/Debug-iphoneos AppRTCDemo,同时在下面的libtool命令处修改路径为Debug-iphones
     ninja -C out_ios_x86_64/Release-iphonesimulator iossim AppRTCDemo;
  
     echo "*** creating iOS x86_64 libraries";
@@ -120,7 +120,7 @@ function build_iosdevice_armv7() {
     export GYP_CROSSCOMPILE=1;
     pushd src;
     gclient runhooks;
-    #若需要编译Debug版则将下面这条语句改成 ninja -C out_ios_armv7/Debug-iphoneos AppRTCDemo,同时在下面的libtool命令出修改路径为Debug-iphones
+    #若需要编译Debug版则将下面这条语句改成 ninja -C out_ios_armv7/Debug-iphoneos AppRTCDemo,同时在下面的libtool命令处修改路径为Debug-iphones
     ninja -C out_ios_armv7/Release-iphoneos AppRTCDemo;
  
     echo "*** creating iOS armv7 libraries";
@@ -143,7 +143,7 @@ function build_iosdevice_arm64() {
     export GYP_CROSSCOMPILE=1;
     pushd src;
     gclient runhooks;
-    #若需要编译Debug版则将下面这条语句改成 ninja -C out_ios_arm64/Debug-iphoneos          AppRTCDemo,同时在下面的libtool命令出修改路径为Debug-iphones
+    #若需要编译Debug版则将下面这条语句改成 ninja -C out_ios_arm64/Debug-iphoneos AppRTCDemo,同时在下面的libtool命令处修改路径为Debug-iphones
     ninja -C out_ios_arm64/Release-iphoneos AppRTCDemo;
  
     echo "*** creating iOS arm64 libraries";
