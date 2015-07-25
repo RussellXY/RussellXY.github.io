@@ -8,12 +8,12 @@ tags:
 - YapDatabase
 keywords: iOS YapDatabase FMDB SQLite
 description: 使用YapDatabase替代FMDB
-published: true
+published:true
 ---
 
 
 最近在研究一个开源项目[ChatSecure-iOS](https://github.com/ChatSecure/ChatSecure-iOS)时发现了一个不错的用于本地数据持久化的第三方库:[YapDatabase](https://github.com/yapstudios/YapDatabase),一番调研后决定集成到自己正在做的项目中，实践后发现比起之前用FMDB时需要写大量的sql语句来建表、增删查改等等方便太多了。
-##什么是YapDatabase
+###什么是YapDatabase
 **YapDatabase**由两个主要特点组成:
 
 + 一个面向**iOS**和**Mac**的collection/key/value形式的数据存储工具，它是通过**SQLite**实现的.
@@ -31,7 +31,7 @@ published: true
 + **扩展**.不仅仅是key-value，还具备很多扩展的数据结构，你可以扩展自己的数据结构。
 + **Objective-C**.使用Objective-C的api意味着你可以即刻上手。
 
-##存储对象
+###存储对象
 通过**YapDatabase**你可以存储任何类型的对象，不过为了能够存储对象到磁盘中你必须实现这个对象的序列化，一个常用的方式是遵守NSCoding协议，然后实现该协议中的两个序列化和反序列化的方法，详情可阅读apple[官方文档](https://developer.apple.com/library/mac/#documentation/Cocoa/Conceptual/Archiving/Articles/codingobjects.html#//apple_ref/doc/uid/20000948-BCIHBJDE)。
 
 {% highlight ruby %}
@@ -76,7 +76,7 @@ published: true
 
 PS:此时如果搭配[Mantle](https://github.com/Mantle/Mantle)（帮你的Model类自动实现NSCoding,NSCopy协议）的话效率杠杠的。
 
-##初次使用
+###初次使用
 使用YapDatabase来实现一个简单的存储操作
 {% highlight ruby %}
 // 创建或者打开指定路径的数据库文件
