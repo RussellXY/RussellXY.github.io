@@ -13,6 +13,8 @@ published: true
 
 
 最近在研究一个开源项目[ChatSecure-iOS](https://github.com/ChatSecure/ChatSecure-iOS)时发现了一个不错的用于本地数据持久化的第三方库:[YapDatabase](https://github.com/yapstudios/YapDatabase),一番调研后决定集成到自己正在做的项目中，实践后发现比起之前用FMDB时需要写大量的sql语句来建表、增删查改等等方便太多了。
+
+
 ###什么是YapDatabase
 **YapDatabase**由两个主要特点组成:
 
