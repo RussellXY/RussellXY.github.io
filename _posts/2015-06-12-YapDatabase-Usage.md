@@ -8,7 +8,7 @@ tags:
 - YapDatabase
 keywords: iOS YapDatabase FMDB SQLite
 description: 使用YapDatabase替代FMDB
-published:true
+published: true
 ---
 
 
