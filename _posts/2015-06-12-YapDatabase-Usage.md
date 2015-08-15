@@ -1,13 +1,13 @@
 ---
 layout: post
-title: 使用YapDatabase替代FMDB
-date: 2015-05-11
+title: YapDatabase实践
+date: 2015-06-12
 comments: true
 categories: iOS
 tags: 
 - YapDatabase
 keywords: iOS YapDatabase FMDB SQLite
-description: 使用YapDatabase替代FMDB
+description: YapDatabase实践
 published: true
 ---
 
