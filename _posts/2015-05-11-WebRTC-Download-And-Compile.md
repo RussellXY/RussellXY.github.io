@@ -37,7 +37,7 @@ RussellY:~ linmin$ git clone https://chromium.googlesource.com/chromium/tools/de
 把`depot_tools`的路径加入系统环境变量
 {% highlight ruby %}
 RussellY:echo "export PATH=$PWD/depot_tools:$PATH" > ~/.bash_profile
-RussellY:echo source ~/.bash_profile
+RussellY:source ~/.bash_profile
 
 {% endhighlight %}
 
