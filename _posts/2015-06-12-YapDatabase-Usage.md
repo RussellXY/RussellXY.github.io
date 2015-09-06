@@ -110,4 +110,4 @@ NSString *key = @"id of this object";
 一个很好理解**YapDatabase**的方法是把它当作一个存储dictionaries的dictionary，区别仅仅是它会把所有的值都存储在磁盘中。
 你可以在一个transaction block中做很多事情，例如：在数据库中插入对象、枚举所有对象。
 
-
+未完待续...
